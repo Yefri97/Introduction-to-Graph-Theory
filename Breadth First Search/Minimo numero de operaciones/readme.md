@@ -1,0 +1,1 @@
+# Minimo numero de operaciones
