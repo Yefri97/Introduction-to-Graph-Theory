@@ -32,10 +32,10 @@ int mi[10] = {0, -1, 0, 1};
 int mj[10] = {-1, 0, 1, 0};
 
 int breadthFirstSearch(state s, state t) {
-  vector< vector<int> > dist(n, vector<int>(m, UNVISITED)); dist[s.r][s.c] = 0;
+	vector< vector<int> > dist(n, vector<int>(m, UNVISITED)); dist[s.r][s.c] = 0;
   queue<state> q;	q.push(s);
   while (!q.empty()) {
-	  state u = q.front(); q.pop();
+		state u = q.front(); q.pop();
 	  for (int j = 0; j < 4; j++) {
 			state v = state(u.r + mi[j], u.c + mj[j]);
 			if (v.r < 0 || v.r >= n || v.c < 0 || v.c >= m) v = u;
