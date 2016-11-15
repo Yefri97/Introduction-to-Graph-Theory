@@ -55,6 +55,8 @@ int breadthFirstSearch(node s, node t) {  // BFS
   return dist[t.i][t.j]; // Retornamos la distancia mas corta al Target
 }
 
+
+// Función Principal
 int main() {
 
   // Leyendo de archivo
@@ -111,6 +113,7 @@ int main() {
 
   gotoxy(0, height);
   getchar();
+
 
   return 0;
 }
