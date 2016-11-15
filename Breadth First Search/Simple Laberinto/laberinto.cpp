@@ -98,6 +98,6 @@ int main() {
 
 	gotoxy(0, n, ' ');
 	getchar();
-
+	
   return 0;
 }
