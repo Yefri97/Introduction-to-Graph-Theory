@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+// Función que pinta un carácter determinado en una posición (x,y) de la consola
 void gotoxy(int x, int y, char c){
 	HANDLE hCon;
 	hCon = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -17,6 +19,8 @@ void gotoxy(int x, int y, char c){
 	cout << c;
 }
 
+
+// Estructura la cual me almacena coordenadas (x,y)
 struct state {
 	int r, c;
 	state() {}
@@ -31,6 +35,8 @@ char board[MX + 10][MX + 10];
 int mi[10] = {0, -1, 0, 1};
 int mj[10] = {-1, 0, 1, 0};
 
+
+// Búsqueda Primero en Anchura (BFS)
 int breadthFirstSearch(state s, state t) {
 	vector< vector<int> > dist(n, vector<int>(m, UNVISITED)); dist[s.r][s.c] = 0;
   queue<state> q;	q.push(s);
@@ -50,8 +56,10 @@ int breadthFirstSearch(state s, state t) {
   return dist[t.r][t.c];
 }
 
+
+// Función Principal
 int main() {
-	ifstream cin("laberinto.txt");
+	ifstream cin("laberinto.txt"); //
 	state source, target;
 	cin >> n >> m;
 	for (int i = 0; i < n; i++) {
