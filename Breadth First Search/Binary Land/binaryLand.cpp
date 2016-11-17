@@ -25,7 +25,7 @@ void hideCursor() {
 struct node {
   int r1, c1, r2, c2;
   node() {}
-  node(int _r1, int _c1, int _r2, int _c2) : r1(_r1), c1(_c1), r2(_r2), c2(_c2) {} 
+  node(int _r1, int _c1, int _r2, int _c2) : r1(_r1), c1(_c1), r2(_r2), c2(_c2) {}
 };
 
 int mi1[10] = { 0,  1,  0, -1};
@@ -33,11 +33,11 @@ int mj1[10] = {-1,  0,  1,  0};
 int mi2[10] = { 0,  1,  0, -1};
 int mj2[10] = { 1,  0, -1,  0};
 
-const int MAX_N = 40, INF = -1;
+const int MX = 40, INF = -1;
 int height, width, tr, tc;
-int dist[MAX_N + 10][MAX_N + 10][MAX_N + 10][MAX_N + 10];
+int dist[MX + 10][MX + 10][MX + 10][MX + 10];
 node path[MX + 10][MX + 10][MX + 10][MX + 10];
-char board[MAX_N + 10][MAX_N + 10];
+char board[MX + 10][MX + 10];
 
 int breadthFirstSearch(node s, node t) {
   memset(dist, INF, sizeof dist); dist[s.r1][s.c1][s.r2][s.c2] = 0;
@@ -72,7 +72,7 @@ int main() {
   cin >> height >> width;
 
   int r1, c1, r2, c2, tr, tc;
-  
+
   for (int i = 0; i < height; i++) {
     for (int j = 0; j < width; j++) {
       char c; cin >> c;
@@ -109,6 +109,8 @@ int main() {
   }
 
   // Mostrando las respuesta
+  gotoxy(source.c1, source.r1); cout << ".";
+  gotoxy(source.c2, source.r2); cout << ".";
   curr = ans[0];
   gotoxy(curr.c1, curr.r1); cout << "1";
   gotoxy(curr.c2, curr.r2); cout << "2";
@@ -118,8 +120,9 @@ int main() {
     curr = ans[i];
     gotoxy(curr.c1, curr.r1); cout << "1";
     gotoxy(curr.c2, curr.r2); cout << "2";
-    Sleep(200);
+    Sleep(500);
   }
+  gotoxy(target.c1, target.r1); cout << "3";
 
   gotoxy(0, height);
   getchar();
