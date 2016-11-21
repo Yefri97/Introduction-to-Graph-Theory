@@ -67,7 +67,7 @@ int breadthFirstSearch(node s, node t) {
 
 int main() {
 
-  ifstream cin("binaryLand.in");
+  ifstream cin("binaryLand2.in");
 
   cin >> height >> width;
 

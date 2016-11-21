@@ -41,7 +41,7 @@ int floodFill(int r, int c, char c1, char c2) {
 
 int main() {
 
-  ifstream cin("botePintura.in");
+  ifstream cin("botePintura2.in");
 
   cin >> height >> width;
   for (int i = 0; i < height; i++)
